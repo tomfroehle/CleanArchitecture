@@ -24,7 +24,7 @@ namespace CleanArchitecture.WebUI
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    context.Database.Migrate();
+                    context.Database.EnsureCreated();
 
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
